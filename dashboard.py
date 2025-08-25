@@ -1,9 +1,12 @@
+import os
 import pandas as pd
 from dash import Dash, dcc, html, Input, Output
 import plotly.graph_objects as go
 
-# --- 1️⃣ Ler CSV com previsões ---
-arquivo = r"C:\Users\wztyd5\OneDrive - General Motors\Doc\Day trade\Previsao_Jogos.csv"
+# --- 1️⃣ Caminho dinâmico do CSV ---
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+arquivo = os.path.join(BASE_DIR, "Previsao_Jogos.csv")
+
 df = pd.read_csv(arquivo, sep=';')
 
 # Garantir que Data seja string para o dropdown
