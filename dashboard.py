@@ -21,6 +21,7 @@ df['Jogo'] = df['Time_Casa'] + ' x ' + df['Time_Fora']
 
 # --- 3️⃣ Inicializar app ---
 app = Dash(__name__)
+server = app.server  # necessário para Render/Gunicorn
 app.title = 'Dashboard de Previsão de Jogos'
 
 # --- 4️⃣ Layout ---
@@ -143,4 +144,4 @@ def atualizar_dashboard(jogo_selecionado):
 
 # --- 6️⃣ Rodar app ---
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run_server()
