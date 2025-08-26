@@ -14,6 +14,7 @@ df['Jogo'] = df['Time_Casa'] + ' x ' + df['Time_Fora']
 
 # --- Inicializar app ---
 app = Dash(__name__)
+server = app.server
 app.title = 'Dashboard de Apostas'
 
 # --- Layout ---
